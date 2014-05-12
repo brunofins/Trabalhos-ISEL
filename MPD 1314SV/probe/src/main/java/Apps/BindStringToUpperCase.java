@@ -15,25 +15,28 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package pt.isel.mpd14.probe;
-
+package Apps;
+import pt.isel.mpd14.probe.*;
 
 /**
  *
  * @author FINS
  */
-public class App {
-   
-        public static void main(String[] args){
-           Class c = Integer.class;
-           c.getClass();
-            Binder b = new Binder(null, new BindMember<String>() {
+public class BindStringToUpperCase<T> implements BindMember<T>{
+    
+    private BindMember[] bindMember;
 
-                @Overrider
-                public boolean bind(T target, String name, Object v) {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-                }
-            });
-        }    
+    public BindStringToUpperCase(BindMember<T>...bindMember) {
+        this.bindMember = bindMember;
+    }
+    
+    @Override
+    public boolean bind(T target, String name, Object v) {
+        
+        
+        return false;
+       
+        
+    }
     
 }
